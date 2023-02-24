@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --lightgrey: #C8C8C8;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,16 +15,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Wheel */
+
 #wheel-container {
   width: 240px;
   height: 155px;
-  background-color: #9c9c9c;
+  background-color: var(--lightgrey, #9c9c9c);
   position: absolute;
   top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: grid;
   place-items: center;
+  -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+  border-radius: 0 0 15px 15px;
 }
 
 #wheel {
@@ -32,6 +40,8 @@ body {
   height: 155px;
   position: relative;
 }
+
+/* Action buttons */
 
 .btn {
   position: absolute;
@@ -67,4 +77,28 @@ body {
   opacity: 0.7;
   height: 24px;
   width: 24px;
+}
+
+/* Screen */
+
+#screen {
+  height: 280px;
+  width: 240px;
+  border: 15px solid var(--lightgrey, #9c9c9c);
+  border-left: 5px solid var(--lightgrey, #9c9c9c);
+  border-right: 5px solid var(--lightgrey, #9c9c9c);
+  border-radius: 15px 15px 0 0;
+  position: absolute;
+  top: 42.6%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: no-repeat center/cover url("https://images.unsplash.com/photo-1677131001999-aa1291476c37?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80");
+}
+
+#menu {
+  height: 100%;
+  width: 55%;
+  background-color: white;
+  text-align: center;
+  font-weight: bold;
 }

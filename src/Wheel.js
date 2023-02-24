@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 
 const Wheel = () => {
+    // adding the rotation script when the component mounts
     useEffect(() => {
         const ztScript = document.createElement('script');
         ztScript.src = "./scripts/zingtouch.js";
