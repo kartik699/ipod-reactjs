@@ -89,7 +89,7 @@ body {
   border-right: 5px solid var(--lightgrey, #9c9c9c);
   border-radius: 15px 15px 0 0;
   position: absolute;
-  top: 42.6%;
+  top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: no-repeat center/cover url("https://images.unsplash.com/photo-1677131001999-aa1291476c37?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80");
@@ -99,6 +99,36 @@ body {
   height: 100%;
   width: 55%;
   background-color: white;
-  text-align: center;
   font-weight: bold;
+}
+
+.menu-items-list {
+  list-style: none;
+  text-align: left;
+  padding: 0px;
+  margin-top: 2rem;
+  font-weight: 600;
+}
+
+.menu-item {
+  padding: 7px 0 7px 2px;
+}
+
+.active {
+  background-color: #007FFF;
+  position: relative;
+}
+
+/* Creating the small arrow icon */
+.active::after {
+  content: '';
+  height: 5px;
+  width: 5px;
+  display: inline-block;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  transform: rotate(-45deg);
+  position: absolute;
+  left: 88%;
+  top: 40%;
 }
