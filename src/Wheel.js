@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-const Wheel = () => {
+const Wheel = ({ selectActiveItem, returnMainMenu }) => {
     // adding the rotation script when the component mounts
     useEffect(() => {
         const ztScript = document.createElement('script');
@@ -12,7 +12,8 @@ const Wheel = () => {
     return (
         <div id="wheel-container">
             <div id="wheel">
-                <div className="btn menu-btn">
+                <div id="clickable" onClick={() => selectActiveItem()}></div>
+                <div className="btn menu-btn" onClick={() => returnMainMenu()}>
                     <span draggable="false"><strong>Menu</strong></span>
                 </div>
                 <div className="btn back-btn">

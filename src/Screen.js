@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
+import Coverflow from "./Coverflow";
+import Games from "./Games";
+import MainMenu from "./MainMenu";
+import Settings from "./Settings";
 
-const Screen = () => {
+const Screen = ({ menuId }) => {
     // background images for ipod
     let backgrounds = [
         "https://images.unsplash.com/photo-1677131001999-aa1291476c37?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
@@ -36,15 +40,11 @@ const Screen = () => {
 
     return (
         <div id="screen">
-            <div id="menu">
-                <span style={{padding: 5, fontSize: '1.3em'}}>iPod.js</span>
-                <ul className="menu-items-list">
-                    <li className="menu-item" data-itemid="0">Cover Flow</li>
-                    <li className="menu-item active" data-itemid="1">Music</li>
-                    <li className="menu-item" data-itemid="2">Games</li>
-                    <li className="menu-item" data-itemid="3">Settings</li>
-                </ul>
-            </div>
+            { (menuId === -1) ? <MainMenu /> : '' }
+            { (menuId === 0) ? <Coverflow /> : '' }
+            { (menuId === 1) ? <MainMenu /> : '' }
+            { (menuId === 2) ? <Games /> : '' }
+            { (menuId === 3) ? <Settings /> : '' }
         </div>
     );
 };

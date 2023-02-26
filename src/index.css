@@ -15,6 +15,26 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Utility Classes */
+
+.menu-display {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  display: grid;
+  place-items: center;
+}
+
+.menu-display * {
+  margin: 0;
+}
+
+.menu-display img {
+  height: 80%;
+  width: 80%;
+}
+
 /* Wheel */
 
 #wheel-container {
@@ -27,7 +47,7 @@ body {
   transform: translate(-50%, -50%);
   display: grid;
   place-items: center;
-  -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+  -webkit-box-reflect: below 5px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
   border-radius: 0 0 15px 15px;
 }
 
@@ -39,6 +59,12 @@ body {
   width: 155px;
   height: 155px;
   position: relative;
+}
+
+#clickable {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
 }
 
 /* Action buttons */
@@ -119,7 +145,7 @@ body {
   position: relative;
 }
 
-/* Creating the small arrow icon */
+/* Creating the small arrow icon on active item */
 .active::after {
   content: '';
   height: 5px;
