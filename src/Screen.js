@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Coverflow from "./Coverflow";
-import Games from "./Games";
-import MainMenu from "./MainMenu";
-import Settings from "./Settings";
+import Coverflow from "./menu_components/Coverflow";
+import Games from "./menu_components/Games";
+import MainMenu from "./menu_components/MainMenu";
+import Settings from "./menu_components/Settings";
+import Music from "./menu_components/Music";
 
 const Screen = ({ menuId }) => {
     // background images for ipod
@@ -40,9 +41,10 @@ const Screen = ({ menuId }) => {
 
     return (
         <div id="screen">
+            {/* correct menu will be shown based on the menuId provided by App component as prop */}
             { (menuId === -1) ? <MainMenu /> : '' }
             { (menuId === 0) ? <Coverflow /> : '' }
-            { (menuId === 1) ? <MainMenu /> : '' }
+            { (menuId === 1) ? <Music /> : '' }
             { (menuId === 2) ? <Games /> : '' }
             { (menuId === 3) ? <Settings /> : '' }
         </div>
